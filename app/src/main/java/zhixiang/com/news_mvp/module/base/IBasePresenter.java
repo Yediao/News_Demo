@@ -1,4 +1,4 @@
-package zhixiang.com.news_mvp.module;
+package zhixiang.com.news_mvp.module.base;
 
 /**
  * Created by: maoshiyu
