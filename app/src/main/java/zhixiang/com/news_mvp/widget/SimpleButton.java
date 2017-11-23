@@ -1,4 +1,4 @@
-package com.dl7.mvp.widget;
+package zhixiang.com.news_mvp.widget;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -15,13 +15,13 @@ import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.dl7.mvp.R;
-import com.dl7.mvp.utils.MeasureUtils;
+import zhixiang.com.news_mvp.R;
+import zhixiang.com.news_mvp.utils.MeasureUtils;
 
 
 /**
  * Created by long on 2017/3/2.
- * 状态变化的按钮，替换原标签库里的那个，之前写太乱了，而且在列表中使用会出错乱
+ * 状态变化的按钮
  */
 public class SimpleButton extends View {
 

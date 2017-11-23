@@ -1,4 +1,4 @@
-package com.dl7.mvp.utils;
+package zhixiang.com.news_mvp.utils;
 
 import android.content.Context;
 import android.util.DisplayMetrics;
