@@ -1,6 +1,7 @@
 package zhixiang.com.news_mvp;
 
 import android.app.Application;
+import android.content.Context;
 
 /**
  * Created by: maoshiyu
@@ -14,4 +15,5 @@ public class News extends Application {
         super.onCreate();
 
     }
+
 }
