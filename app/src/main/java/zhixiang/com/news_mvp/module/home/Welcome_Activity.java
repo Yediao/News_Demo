@@ -69,7 +69,7 @@ public class Welcome_Activity extends BaseActivity {
         if (!mIsSkip) {
             mIsSkip = true;
             finish();
-            startActivity(new Intent(Welcome_Activity.this, MainActivity.class));
+            startActivity(new Intent(Welcome_Activity.this, Home_Activity.class));
             overridePendingTransition(R.anim.hold, R.anim.zoom_in_exit);
         }
     }

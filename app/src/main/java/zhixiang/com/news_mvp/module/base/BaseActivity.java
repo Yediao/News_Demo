@@ -5,7 +5,6 @@ import android.support.annotation.LayoutRes;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
@@ -15,8 +14,7 @@ import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 import javax.inject.Inject;
 
 import butterknife.ButterKnife;
-import zhixiang.com.news_mvp.News;
-import zhixiang.com.news_mvp.module.home.inject.module.ActivityModule;
+import zhixiang.com.news_mvp.module.inject.module.ActivityModule;
 
 /**
  * Created by: maoshiyu

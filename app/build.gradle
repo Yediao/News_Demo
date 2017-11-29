@@ -43,4 +43,7 @@ dependencies {
     compile 'com.trello:rxlifecycle:1.0'
     compile 'com.trello:rxlifecycle-components:1.0'
     compile 'com.tbruyelle.rxpermissions:rxpermissions:0.9.1@aar'
+    // circleimageview
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+    compile 'com.android.support:design:26.0.0-alpha1'
 }

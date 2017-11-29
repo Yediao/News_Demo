@@ -24,6 +24,12 @@
             </intent-filter>
         </activity>
 
+        //首页
+        <activity
+            android:name=".module.home.Home_Activity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait">
+        </activity>
 
     </application>
 

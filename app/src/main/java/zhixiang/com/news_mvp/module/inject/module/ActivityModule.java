@@ -1,10 +1,10 @@
-package zhixiang.com.news_mvp.module.home.inject.module;
+package zhixiang.com.news_mvp.module.inject.module;
 
 import android.app.Activity;
 
 import dagger.Module;
 import dagger.Provides;
-import zhixiang.com.news_mvp.module.home.inject.PerActivity;
+import zhixiang.com.news_mvp.module.inject.PerActivity;
 
 /**
  * Created by: maoshiyu

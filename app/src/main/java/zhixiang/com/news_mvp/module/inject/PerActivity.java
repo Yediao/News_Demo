@@ -1,4 +1,4 @@
-package zhixiang.com.news_mvp.module.home.inject;
+package zhixiang.com.news_mvp.module.inject;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
