@@ -1,5 +1,7 @@
 package zhixiang.com.news_mvp.module.base;
 
+import com.trello.rxlifecycle.LifecycleTransformer;
+
 /**
  * Created by: maoshiyu
  * Time  ：    2017/11/23.
@@ -26,4 +28,10 @@ public interface IBaseView {
      * 完成刷新, 新增控制刷新
      */
     void finishRefresh();
+    /**
+     * 绑定生命周期
+     * @param <T>
+     * @return
+     */
+    <T> LifecycleTransformer<T> bindToLife();
 }

@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.trello.rxlifecycle.LifecycleTransformer;
 import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 
 import javax.inject.Inject;
@@ -85,7 +86,11 @@ public  abstract  class BaseActivity<T extends  IBasePrestenter> extends RxAppCo
 
     }
 
+    @Override
+    public <T> LifecycleTransformer<T> bindToLife() {
 
+        return this.<T>bindToLifecycle();
+    }
 
     /**
      * 获取 ActivityModule
