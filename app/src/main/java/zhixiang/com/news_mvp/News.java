@@ -5,10 +5,9 @@ import android.content.Context;
 
 import org.greenrobot.greendao.database.Database;
 
-import java.io.File;
-
 import zhixiang.com.news_mvp.api.RetrofitService;
-import zhixiang.com.news_mvp.local.dao.NewsTypeDao;
+import zhixiang.com.news_mvp.inject.components.DaggerApplicationComponent;
+import zhixiang.com.news_mvp.inject.module.ApplicationModule;
 import zhixiang.com.news_mvp.rxbus.RxBus;
 import zhixiang.com.news_mvp.utils.ToastUtils;
 
@@ -27,10 +26,13 @@ public class News extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        sContext = getApplicationContext();
         _initDatabase();
         _initConfig();
     }
-
+    public static Context getContext() {
+        return sContext;
+    }
 
     /**
      * 初始化数据库
@@ -41,6 +43,17 @@ public class News extends Application {
         mDaoSession = new DaoMaster(database).newSession();
 //        NewsTypeDao.updateLocalData(getApplication(), mDaoSession);
 //        DownloadUtils.init(mDaoSession.getBeautyPhotoInfoDao());
+    }
+
+    /**
+     * 初始化注射器
+     */
+    private void _initInjector() {
+        // 这里不做注入操作，只提供一些全局单例数据
+                            DaggerApplicationComponent.builder()
+                .applicationModule(new ApplicationModule( mDaoSession, mRxBus, sContext))
+                .build();
+
     }
     /**
      * 初始化配置

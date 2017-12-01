@@ -3,18 +3,7 @@ package zhixiang.com.news_mvp.api;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 
-import com.dl7.mvp.AndroidApplication;
-import com.dl7.mvp.api.bean.NewsDetailInfo;
-import com.dl7.mvp.api.bean.NewsInfo;
-import com.dl7.mvp.api.bean.PhotoInfo;
-import com.dl7.mvp.api.bean.PhotoSetInfo;
-import com.dl7.mvp.api.bean.SpecialInfo;
-import com.dl7.mvp.api.bean.WelfarePhotoInfo;
-import com.dl7.mvp.api.bean.WelfarePhotoList;
-import com.dl7.mvp.local.table.BeautyPhotoInfo;
-import com.dl7.mvp.local.table.VideoInfo;
-import com.dl7.mvp.utils.NetUtil;
-import com.dl7.mvp.utils.StringUtils;
+
 import com.orhanobut.logger.Logger;
 
 import java.io.File;
@@ -40,6 +29,18 @@ import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.functions.Func1;
 import rx.schedulers.Schedulers;
+import zhixiang.com.news_mvp.News;
+import zhixiang.com.news_mvp.api.bean.NewsDetailInfo;
+import zhixiang.com.news_mvp.api.bean.NewsInfo;
+import zhixiang.com.news_mvp.api.bean.PhotoInfo;
+import zhixiang.com.news_mvp.api.bean.PhotoSetInfo;
+import zhixiang.com.news_mvp.api.bean.SpecialInfo;
+import zhixiang.com.news_mvp.api.bean.WelfarePhotoInfo;
+import zhixiang.com.news_mvp.api.bean.WelfarePhotoList;
+import zhixiang.com.news_mvp.local.table.BeautyPhotoInfo;
+import zhixiang.com.news_mvp.local.table.VideoInfo;
+import zhixiang.com.news_mvp.utils.NetUtil;
+import zhixiang.com.news_mvp.utils.StringUtils;
 
 /**
  * Created by long on 2016/8/22.
@@ -77,7 +78,7 @@ public class RetrofitService {
      */
     public static void init() {
         // 指定缓存路径,缓存大小100Mb
-        Cache cache = new Cache(new File(AndroidApplication.getContext().getCacheDir(), "HttpCache"),
+        Cache cache = new Cache(new File(News.getContext().getCacheDir(), "HttpCache"),
                 1024 * 1024 * 100);
         OkHttpClient okHttpClient = new OkHttpClient.Builder().cache(cache)
                 .retryOnConnectionFailure(true)
@@ -113,13 +114,13 @@ public class RetrofitService {
         @Override
         public Response intercept(Chain chain) throws IOException {
             Request request = chain.request();
-            if (!NetUtil.isNetworkAvailable(AndroidApplication.getContext())) {
+            if (!NetUtil.isNetworkAvailable(News.getContext())) {
                 request = request.newBuilder().cacheControl(CacheControl.FORCE_CACHE).build();
                 Logger.e("no network");
             }
             Response originalResponse = chain.proceed(request);
 
-            if (NetUtil.isNetworkAvailable(AndroidApplication.getContext())) {
+            if (NetUtil.isNetworkAvailable(News.getContext())) {
                 //有网的时候读接口上的@Headers里的配置，你可以在这里进行统一的设置
                 String cacheControl = request.cacheControl().toString();
                 return originalResponse.newBuilder()
@@ -270,18 +271,18 @@ public class RetrofitService {
                 .flatMap(_flatMapPhotos());
     }
 
-    /**
-     * 获取福利图片
-     * @return
-     */
-    public static Observable<WelfarePhotoInfo> getWelfarePhoto(int page) {
-        return sWelfareService.getWelfarePhoto(page)
-                .subscribeOn(Schedulers.io())
-                .unsubscribeOn(Schedulers.io())
-                .subscribeOn(AndroidSchedulers.mainThread())
-                .observeOn(AndroidSchedulers.mainThread())
-                .flatMap(_flatMapWelfarePhotos());
-    }
+//    /**
+//     * 获取福利图片
+//     * @return
+//     */
+//    public static Observable<WelfarePhotoInfo> getWelfarePhoto(int page) {
+//        return sWelfareService.getWelfarePhoto(page)
+//                .subscribeOn(Schedulers.io())
+//                .unsubscribeOn(Schedulers.io())
+//                .subscribeOn(AndroidSchedulers.mainThread())
+//                .observeOn(AndroidSchedulers.mainThread())
+//                .flatMap(_flatMapWelfarePhotos());
+//    }
 
     /**
      * 获取视频列表

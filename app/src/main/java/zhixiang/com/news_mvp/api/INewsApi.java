@@ -1,12 +1,8 @@
 package zhixiang.com.news_mvp.api;
 
-import com.dl7.mvp.api.bean.NewsDetailInfo;
-import com.dl7.mvp.api.bean.NewsInfo;
-import com.dl7.mvp.api.bean.PhotoInfo;
-import com.dl7.mvp.api.bean.PhotoSetInfo;
-import com.dl7.mvp.api.bean.SpecialInfo;
-import com.dl7.mvp.local.table.BeautyPhotoInfo;
-import com.dl7.mvp.local.table.VideoInfo;
+
+
+
 
 import java.util.List;
 import java.util.Map;
@@ -16,9 +12,17 @@ import retrofit2.http.Headers;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 import rx.Observable;
+import zhixiang.com.news_mvp.api.bean.NewsDetailInfo;
+import zhixiang.com.news_mvp.api.bean.NewsInfo;
+import zhixiang.com.news_mvp.api.bean.PhotoInfo;
+import zhixiang.com.news_mvp.api.bean.PhotoSetInfo;
+import zhixiang.com.news_mvp.api.bean.SpecialInfo;
+import zhixiang.com.news_mvp.local.table.BeautyPhotoInfo;
+import zhixiang.com.news_mvp.local.table.VideoInfo;
 
-import static com.dl7.mvp.api.RetrofitService.AVOID_HTTP403_FORBIDDEN;
-import static com.dl7.mvp.api.RetrofitService.CACHE_CONTROL_NETWORK;
+import static zhixiang.com.news_mvp.api.RetrofitService.AVOID_HTTP403_FORBIDDEN;
+import static zhixiang.com.news_mvp.api.RetrofitService.CACHE_CONTROL_NETWORK;
+
 
 /**
  * Created by long on 2016/8/22.
