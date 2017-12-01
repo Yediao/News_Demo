@@ -14,7 +14,7 @@ import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 import javax.inject.Inject;
 
 import butterknife.ButterKnife;
-import zhixiang.com.news_mvp.module.inject.module.ActivityModule;
+import zhixiang.com.news_mvp.inject.module.ActivityModule;
 
 /**
  * Created by: maoshiyu
