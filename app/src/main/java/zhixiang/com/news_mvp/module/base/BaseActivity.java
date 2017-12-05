@@ -15,6 +15,7 @@ import javax.inject.Inject;
 
 import butterknife.ButterKnife;
 import zhixiang.com.news_mvp.inject.module.ActivityModule;
+import zhixiang.com.news_mvp.widget.EmptyLayout;
 
 /**
  * Created by: maoshiyu
@@ -22,7 +23,7 @@ import zhixiang.com.news_mvp.inject.module.ActivityModule;
  * Desc  ：     基类Activity
  */
 
-public  abstract  class BaseActivity<T extends  IBasePrestenter> extends RxAppCompatActivity implements IBaseView{
+public  abstract  class BaseActivity<T extends  IBasePrestenter> extends RxAppCompatActivity implements IBaseView,EmptyLayout.OnRetryListener{
 
     /**
      * 把 Presenter 提取到基类需要配合基类的 initInjector() 进行注入，如果继承这个基类则必定要提供一个 Presenter 注入方法，
@@ -185,4 +186,9 @@ public  abstract  class BaseActivity<T extends  IBasePrestenter> extends RxAppCo
         }
         return super.onOptionsItemSelected(item);
     }
+    @Override
+    public void onRetry() {
+        updateViews(false);
+    }
+
 }

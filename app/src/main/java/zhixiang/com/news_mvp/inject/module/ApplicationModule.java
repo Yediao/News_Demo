@@ -36,6 +36,7 @@ public class ApplicationModule {
     @Provides
     @Singleton
     DaoSession provideDaoSession() {
+
         return mDaoSession;
     }
 

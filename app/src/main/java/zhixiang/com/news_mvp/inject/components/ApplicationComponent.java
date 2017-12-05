@@ -5,6 +5,7 @@ import android.content.Context;
 import javax.inject.Singleton;
 
 import dagger.Component;
+import zhixiang.com.news_mvp.DaoSession;
 import zhixiang.com.news_mvp.inject.module.ApplicationModule;
 import zhixiang.com.news_mvp.rxbus.RxBus;
 
@@ -21,4 +22,5 @@ public interface ApplicationComponent {
     // provide
     Context getContext();
     RxBus getRxBus();
+    DaoSession getDaoSession();
 }

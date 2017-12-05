@@ -6,6 +6,7 @@ import android.content.Context;
 import org.greenrobot.greendao.database.Database;
 
 import zhixiang.com.news_mvp.api.RetrofitService;
+import zhixiang.com.news_mvp.inject.components.ApplicationComponent;
 import zhixiang.com.news_mvp.inject.components.DaggerApplicationComponent;
 import zhixiang.com.news_mvp.inject.module.ApplicationModule;
 import zhixiang.com.news_mvp.rxbus.RxBus;
@@ -45,6 +46,15 @@ public class News extends Application {
 //        DownloadUtils.init(mDaoSession.getBeautyPhotoInfoDao());
     }
 
+    /**
+     * 获取 ApplicationComponent
+     *
+     * @return ApplicationComponent
+     */
+    protected ApplicationComponent getAppComponent() {
+//        return AndroidApplication.getAppComponent();
+        return  this.getAppComponent();
+    }
     /**
      * 初始化注射器
      */
