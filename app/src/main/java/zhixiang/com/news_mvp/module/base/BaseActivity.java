@@ -14,6 +14,8 @@ import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 import javax.inject.Inject;
 
 import butterknife.ButterKnife;
+import zhixiang.com.news_mvp.News;
+import zhixiang.com.news_mvp.inject.components.ApplicationComponent;
 import zhixiang.com.news_mvp.inject.module.ActivityModule;
 import zhixiang.com.news_mvp.widget.EmptyLayout;
 
@@ -64,6 +66,15 @@ public  abstract  class BaseActivity<T extends  IBasePrestenter> extends RxAppCo
         initInjector();
         initViews();
         updateViews(false);
+    }
+
+    /**
+     * 获取 ApplicationComponent
+     *
+     * @return ApplicationComponent
+     */
+    protected ApplicationComponent getAppComponent() {
+        return News.getAppComponent();
     }
     @Override
     public void showLoading() {
@@ -188,6 +199,7 @@ public  abstract  class BaseActivity<T extends  IBasePrestenter> extends RxAppCo
     }
     @Override
     public void onRetry() {
+
         updateViews(false);
     }
 

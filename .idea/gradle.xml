@@ -8,9 +8,9 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/RecyclerViewHelper" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/playerview" />
-            <option value="$PROJECT_DIR$/tinkerLib" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

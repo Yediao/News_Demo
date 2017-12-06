@@ -1,1 +1,1 @@
-include ':app', ':playerview', ':tinkerLib'
+include ':app', ':playerview', ':RecyclerViewHelper'

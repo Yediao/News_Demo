@@ -1,6 +1,9 @@
 package zhixiang.com.news_mvp.module.home;
 
+import android.util.Log;
 import android.widget.Toast;
+
+import com.orhanobut.logger.Logger;
 
 import zhixiang.com.news_mvp.R;
 import zhixiang.com.news_mvp.module.base.BaseActivity;
