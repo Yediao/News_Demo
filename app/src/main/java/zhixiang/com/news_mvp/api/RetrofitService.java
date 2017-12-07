@@ -2,6 +2,7 @@ package zhixiang.com.news_mvp.api;
 
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
+import android.util.Log;
 
 
 import com.orhanobut.logger.Logger;

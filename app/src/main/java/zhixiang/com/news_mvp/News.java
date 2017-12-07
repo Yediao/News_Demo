@@ -2,7 +2,6 @@ package zhixiang.com.news_mvp;
 
 import android.app.Application;
 import android.content.Context;
-import android.util.Log;
 
 import org.greenrobot.greendao.database.Database;
 

@@ -4,7 +4,7 @@ package zhixiang.com.news_mvp.module.base;
  * Created by long on 2016/8/23.
  * 基础 Presenter
  */
-public interface IBasePresenter {
+public interface IBasePresenter extends IBasePrestenter {
 
     /**
      * 获取网络数据，更新界面

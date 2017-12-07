@@ -1,7 +1,7 @@
-package zhixiang.com.news_mvp.module.news;
+package zhixiang.com.news_mvp.module.news.main;
+
 
 import android.util.Log;
-
 
 import com.orhanobut.logger.Logger;
 
@@ -38,7 +38,7 @@ public class NewsMainPresenter implements IRxBusPresenter {
                 .subscribe(new Action1<List<NewsTypeInfo>>() {
                     @Override
                     public void call(List<NewsTypeInfo> newsTypeBeen) {
-                       mView.loadData(newsTypeBeen);
+                        mView.loadData(newsTypeBeen);
                     }
                 });
     }

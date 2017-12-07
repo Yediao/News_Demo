@@ -3,10 +3,12 @@ package zhixiang.com.news_mvp.inject.module;
 import dagger.Module;
 import dagger.Provides;
 import zhixiang.com.news_mvp.DaoSession;
+import zhixiang.com.news_mvp.adapter.ViewPagerAdapter;
 import zhixiang.com.news_mvp.inject.PerFragment;
 import zhixiang.com.news_mvp.module.base.IRxBusPresenter;
-import zhixiang.com.news_mvp.module.news.NewsMainPresenter;
+import zhixiang.com.news_mvp.module.news.main.INewsMainView;
 import zhixiang.com.news_mvp.module.news.main.NewsMainFragment;
+import zhixiang.com.news_mvp.module.news.main.NewsMainPresenter;
 import zhixiang.com.news_mvp.rxbus.RxBus;
 
 /**
@@ -27,6 +29,10 @@ public class NewsMainModule {
     public IRxBusPresenter provideMainPresenter(DaoSession daoSession, RxBus rxBus) {
         return new NewsMainPresenter(mView, daoSession.getNewsTypeInfoDao(), rxBus);
     }
-
+    @PerFragment
+    @Provides
+    public ViewPagerAdapter provideViewPagerAdapter() {
+        return new ViewPagerAdapter(mView.getChildFragmentManager());
+    }
 
 }

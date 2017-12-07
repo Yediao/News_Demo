@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 
 
@@ -28,7 +27,6 @@ import zhixiang.com.news_mvp.inject.components.DaggerManageComponent;
 import zhixiang.com.news_mvp.inject.module.ChannelModule;
 import zhixiang.com.news_mvp.local.table.NewsTypeInfo;
 import zhixiang.com.news_mvp.module.base.BaseActivity;
-import zhixiang.com.news_mvp.utils.ToastUtils;
 
 
 /**
